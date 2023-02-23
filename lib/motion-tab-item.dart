@@ -73,15 +73,13 @@ class _MotionTabItemState extends State<MotionTabItem> {
               alignment: Alignment(0, textYAlign),
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: widget.selected
-                    ? Text(
-                        widget.title!,
-                        style: widget.textStyle,
-                        softWrap: false,
-                        maxLines: 1,
-                        textAlign: TextAlign.center,
-                      )
-                    : Text(''),
+                child: Text(
+                  widget.title!,
+                  style: widget.textStyle,
+                  softWrap: false,
+                  maxLines: 1,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ),
