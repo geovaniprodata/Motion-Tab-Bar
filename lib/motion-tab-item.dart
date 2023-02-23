@@ -53,7 +53,7 @@ class _MotionTabItemState extends State<MotionTabItem> {
   _setIconTextAlpha() {
     setState(() {
       iconYAlign = (widget.selected) ? ICON_OFF : ICON_ON;
-      textYAlign = (widget.selected) ? TEXT_ON : TEXT_OFF;
+
       iconAlpha = (widget.selected) ? ALPHA_OFF : ALPHA_ON;
     });
   }
@@ -70,9 +70,9 @@ class _MotionTabItemState extends State<MotionTabItem> {
             alignment: Alignment.center,
             child: AnimatedAlign(
               duration: Duration(milliseconds: ANIM_DURATION),
-              alignment: Alignment(0, textYAlign),
+              alignment: Alignment(0, TEXT_ON),
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(bottom: 2),
                 child: Text(
                   widget.title!,
                   style: widget.textStyle,
@@ -85,7 +85,7 @@ class _MotionTabItemState extends State<MotionTabItem> {
           ),
           InkWell(
             onTap: () => widget.callbackFunction(),
-            child: Container(
+            child: SizedBox(
               height: double.infinity,
               width: double.infinity,
               child: AnimatedAlign(
