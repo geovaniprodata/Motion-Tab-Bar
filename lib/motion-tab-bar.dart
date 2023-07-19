@@ -1,7 +1,7 @@
 library motiontabbar;
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:motion_tab_bar_v2/motion-tab-controller.dart';
 import 'motion-tab-item.dart';
 
 typedef MotionTabBuilder = Widget Function();
@@ -19,6 +19,7 @@ class MotionTabBar extends StatefulWidget {
   final List<String?> labels;
   final List<IconData>? icons;
   final bool useSafeArea;
+  final MotionTabBarController? controller;
 
   // badge
   final List<Widget?>? badges;
@@ -39,6 +40,7 @@ class MotionTabBar extends StatefulWidget {
     this.icons,
     this.useSafeArea = true,
     this.badges,
+    this.controller,
   })  : assert(labels.contains(initialSelectedTab)),
         assert(icons != null && icons.length == labels.length),
         assert((badges != null && badges.length > 0)
@@ -79,6 +81,16 @@ class _MotionTabBarState extends State<MotionTabBar>
   @override
   void initState() {
     super.initState();
+
+    if(widget.controller != null) {
+      widget.controller!.onTabChange= (index) {
+        setState(() {
+          activeIcon = widget.icons![index];
+          selectedTab = widget.labels[index];
+        });
+        _initAnimationAndStart(_positionAnimation.value, position);
+      };
+    }
 
     labels = widget.labels;
     icons = Map.fromIterable(
