@@ -1,4 +1,21 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        Alignment,
+        BorderRadius,
+        BoxConstraints,
+        BoxDecoration,
+        BuildContext,
+        Color,
+        Colors,
+        Container,
+        EdgeInsets,
+        FontWeight,
+        Key,
+        StatelessWidget,
+        Text,
+        TextAlign,
+        TextStyle,
+        Widget;
 
 class MotionBadgeWidget extends StatelessWidget {
   const MotionBadgeWidget({

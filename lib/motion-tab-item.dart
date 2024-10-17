@@ -1,4 +1,30 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
+    show
+        Alignment,
+        AnimatedAlign,
+        AnimatedOpacity,
+        BuildContext,
+        Color,
+        Colors,
+        Container,
+        Curves,
+        EdgeInsets,
+        Expanded,
+        Icon,
+        IconButton,
+        IconData,
+        InkWell,
+        Padding,
+        Positioned,
+        SizedBox,
+        Stack,
+        StackFit,
+        State,
+        StatefulWidget,
+        Text,
+        TextAlign,
+        TextStyle,
+        Widget;
 
 const double ICON_OFF = -3;
 const double ICON_ON = 0;
@@ -72,7 +98,7 @@ class _MotionTabItemState extends State<MotionTabItem> {
               duration: Duration(milliseconds: ANIM_DURATION),
               alignment: Alignment(0, TEXT_ON),
               child: Padding(
-                padding: const EdgeInsets.only(bottom: 2),
+                padding: const EdgeInsets.symmetric(vertical: 5),
                 child: Text(
                   widget.title!,
                   style: widget.textStyle,

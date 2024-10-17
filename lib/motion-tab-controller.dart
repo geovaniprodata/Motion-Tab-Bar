@@ -1,6 +1,6 @@
 library motiontabbar;
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show TabController, TickerProvider;
 
 class MotionTabBarController extends TabController {
   MotionTabBarController({
