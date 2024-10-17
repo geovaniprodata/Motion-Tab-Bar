@@ -98,7 +98,7 @@ class _MotionTabItemState extends State<MotionTabItem> {
               duration: Duration(milliseconds: ANIM_DURATION),
               alignment: Alignment(0, TEXT_ON),
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 5),
+                padding: const EdgeInsets.symmetric(vertical: 10),
                 child: Text(
                   widget.title!,
                   style: widget.textStyle,
